@@ -16,6 +16,10 @@ func main() {
 	r.POST("/books", controllers.CreateBook)
 	r.PUT("/books/:id", controllers.UpdateBook)
 	r.DELETE("/books/:id", controllers.DeleteBook)
+	r.POST("/books/:id/publish", controllers.PublishBook)
+	r.DELETE("/books/:id/publish", controllers.UnPublishBook)
+	r.POST("auth/register", controllers.RegisterUser)
+
 	err := r.Run()
 	if err != nil {
 		return

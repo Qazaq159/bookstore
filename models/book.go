@@ -8,6 +8,13 @@ type Book struct {
 	Author      string  `json:"author"`
 	Description string  `json:"description"`
 	Cost        float64 `json:"cost"`
+	IsPublished bool    `json:"is_published" gorm:"default: false;"`
+}
+
+type Rate struct {
+	ID    uint `json:"id" gorm:"primary key"`
+	grade int  `json:"grade"`
+	//Author User `json:"author" gorm:""`
 }
 
 type GetBook struct {
